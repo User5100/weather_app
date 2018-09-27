@@ -26,7 +26,17 @@ class App extends Component {
   }
 
   render() {
-    return <div>Hello, Weather App!</div>;
+    const { data, loading } = this.state;
+
+    if (loading) {
+      return <h1>Loading Weather information. Please wait</h1>;
+    } else {
+      return (
+        <pre>
+          <code>{JSON.stringify(data, null, 4)}</code>
+        </pre>
+      );
+    }
   }
 }
 

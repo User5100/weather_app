@@ -22182,7 +22182,15 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return _react.default.createElement("div", null, "Hello, Weather App!");
+      var _this$state = this.state,
+          data = _this$state.data,
+          loading = _this$state.loading;
+
+      if (loading) {
+        return _react.default.createElement("h1", null, "Loading Weather information. Please wait");
+      } else {
+        return _react.default.createElement("pre", null, _react.default.createElement("code", null, JSON.stringify(data, null, 4)));
+      }
     }
   }]);
 
@@ -22217,7 +22225,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62534" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64069" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
