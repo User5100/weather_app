@@ -32,7 +32,12 @@ class App extends Component {
     if (loading) {
       return <h1>Loading Weather information. Please wait</h1>;
     } else {
-      return <City {...data} />;
+      return (
+        <div>
+          <h1>Weather App</h1>
+          <City {...data} />
+        </div>
+      );
     }
   }
 }
