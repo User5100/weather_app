@@ -1,4 +1,5 @@
 import React from "react";
+import { Section, LI, UL } from "./styled-city";
 
 const City = props => {
   const {
@@ -10,19 +11,19 @@ const City = props => {
 
   return (
     <div>
-      <section>
+      <Section>
         <h2>City - {city}</h2>
-        <section>
+        <Section>
           <h2>Weather Information</h2>
-          <ul>
-            <li>Description - {description}</li>
-            <li>Main - {main}</li>
-            <li>Temp - {temp}</li>
-            <li>Humidity - {humidity}</li>
-            <li>Wind Speed - {speed} </li>
-          </ul>
-        </section>
-      </section>
+          <UL>
+            <LI>Description - {description}</LI>
+            <LI>Main - {main}</LI>
+            <LI>Temp - {temp}</LI>
+            <LI>Humidity - {humidity}</LI>
+            <LI>Wind Speed - {speed} </LI>
+          </UL>
+        </Section>
+      </Section>
     </div>
   );
 };
