@@ -15,6 +15,14 @@ class App extends Component {
 
   componentDidMount() {
     const url = getUrl(2643744);
+
+    fetch(url)
+      .then(response => {
+        response.json().then(data => {
+          this.setState({ data, loading: false });
+        });
+      })
+      .catch(function() {});
   }
 
   render() {

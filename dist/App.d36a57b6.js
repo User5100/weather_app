@@ -22167,7 +22167,17 @@ function (_Component) {
   _createClass(App, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      var _this2 = this;
+
       var url = getUrl(2643744);
+      fetch(url).then(function (response) {
+        response.json().then(function (data) {
+          _this2.setState({
+            data: data,
+            loading: false
+          });
+        });
+      }).catch(function () {});
     }
   }, {
     key: "render",
@@ -22207,7 +22217,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60567" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62534" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
