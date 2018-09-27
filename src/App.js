@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
 import City from "./components/city";
+import Time from "./components/date";
 
 function getUrl(id) {
   return `http://api.openweathermap.org/data/2.5/weather?id=${id}&APPID=${
@@ -36,6 +37,7 @@ class App extends Component {
         <div>
           <h1>Weather App</h1>
           <City {...data} />
+          <Time />
         </div>
       );
     }
