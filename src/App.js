@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { render } from "react-dom";
 import City from "./components/city";
 import Time from "./components/date";
+import { H1 } from "./styled-app";
 
 function getUrl(id) {
   return `http://api.openweathermap.org/data/2.5/weather?id=${id}&APPID=${
@@ -35,7 +36,7 @@ class App extends Component {
     } else {
       return (
         <div>
-          <h1>Weather App</h1>
+          <H1>Weather App</H1>
           <City {...data} />
           <Time />
         </div>

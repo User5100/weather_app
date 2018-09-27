@@ -27459,7 +27459,48 @@ Object.defineProperty(exports, "default", {
 var _city = _interopRequireDefault(require("./city"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./city":"components/city/city.js"}],"components/date/time.js":[function(require,module,exports) {
+},{"./city":"components/city/city.js"}],"components/date/styled-time.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Section = exports.P = void 0;
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 1.5em;\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  background-color: yellow;\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var Section = _styledComponents.default.section(_templateObject());
+
+exports.Section = Section;
+
+var P = _styledComponents.default.p(_templateObject2());
+
+exports.P = P;
+},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"components/date/time.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -27469,16 +27510,18 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _styledTime = require("./styled-time");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Time = function Time() {
   var date = new Date().toDateString();
-  return _react.default.createElement("section", null, _react.default.createElement("h2", null, "Date"), _react.default.createElement("p", null, date));
+  return _react.default.createElement(_styledTime.Section, null, _react.default.createElement("h2", null, "Date"), _react.default.createElement(_styledTime.P, null, date));
 };
 
 var _default = Time;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js"}],"components/date/index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./styled-time":"components/date/styled-time.js"}],"components/date/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -27494,7 +27537,34 @@ Object.defineProperty(exports, "default", {
 var _time = _interopRequireDefault(require("./time"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./time":"components/date/time.js"}],"App.js":[function(require,module,exports) {
+},{"./time":"components/date/time.js"}],"styled-app.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.H1 = void 0;
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  text-align: center;\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var H1 = _styledComponents.default.h1(_templateObject());
+
+exports.H1 = H1;
+},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireWildcard(require("react"));
@@ -27504,6 +27574,8 @@ var _reactDom = require("react-dom");
 var _city = _interopRequireDefault(require("./components/city"));
 
 var _date = _interopRequireDefault(require("./components/date"));
+
+var _styledApp = require("./styled-app");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27580,7 +27652,7 @@ function (_Component) {
       if (loading) {
         return _react.default.createElement("h1", null, "Loading Weather information. Please wait");
       } else {
-        return _react.default.createElement("div", null, _react.default.createElement("h1", null, "Weather App"), _react.default.createElement(_city.default, data), _react.default.createElement(_date.default, null));
+        return _react.default.createElement("div", null, _react.default.createElement(_styledApp.H1, null, "Weather App"), _react.default.createElement(_city.default, data), _react.default.createElement(_date.default, null));
       }
     }
   }]);
@@ -27589,7 +27661,7 @@ function (_Component) {
 }(_react.Component);
 
 (0, _reactDom.render)(_react.default.createElement(App, null), document.getElementById("root"));
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./components/city":"components/city/index.js","./components/date":"components/date/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./components/city":"components/city/index.js","./components/date":"components/date/index.js","./styled-app":"styled-app.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -27616,7 +27688,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57454" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59648" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

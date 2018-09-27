@@ -1,13 +1,14 @@
 import React from "react";
+import { P, Section } from "./styled-time";
 
 const Time = () => {
   const date = new Date().toDateString();
 
   return (
-    <section>
+    <Section>
       <h2>Date</h2>
-      <p>{date}</p>
-    </section>
+      <P>{date}</P>
+    </Section>
   );
 };
 
