@@ -4,10 +4,12 @@ import { Section, LI, UL } from "./styled-city";
 const City = props => {
   const {
     name: city,
-    weather: { main, description },
+    weather,
     main: { temp, humidity },
     wind: { speed }
   } = props;
+  const [words] = weather;
+  const { main, description } = words;
 
   return (
     <div>

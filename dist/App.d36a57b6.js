@@ -27429,15 +27429,27 @@ var _styledCity = require("./styled-city");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 var City = function City(props) {
   var city = props.name,
-      _props$weather = props.weather,
-      main = _props$weather.main,
-      description = _props$weather.description,
+      weather = props.weather,
       _props$main = props.main,
       temp = _props$main.temp,
       humidity = _props$main.humidity,
       speed = props.wind.speed;
+
+  var _weather = _slicedToArray(weather, 1),
+      words = _weather[0];
+
+  var main = words.main,
+      description = words.description;
   return _react.default.createElement("div", null, _react.default.createElement(_styledCity.Section, null, _react.default.createElement("h2", null, "City - ", city), _react.default.createElement(_styledCity.Section, null, _react.default.createElement("h2", null, "Weather Information"), _react.default.createElement(_styledCity.UL, null, _react.default.createElement(_styledCity.LI, null, "Description - ", description), _react.default.createElement(_styledCity.LI, null, "Main - ", main), _react.default.createElement(_styledCity.LI, null, "Temp - ", temp), _react.default.createElement(_styledCity.LI, null, "Humidity - ", humidity), _react.default.createElement(_styledCity.LI, null, "Wind Speed - ", speed, " ")))));
 };
 
@@ -27688,7 +27700,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59648" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62696" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
